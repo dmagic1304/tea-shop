@@ -6,7 +6,7 @@ let inventoryList = [
     origin: "Asia",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$13",
-    poundsRemaining: 130,
+    poundsRemaining: 3,
     poundsSold: 0,
     id: v4()
  },

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 function TeaDetails({tea, home, sell}){
 
+  
+
   return (
     <div>
       <h1>{tea.name}</h1>
@@ -10,7 +12,7 @@ function TeaDetails({tea, home, sell}){
       <p>Roast: {tea.roast}</p>
       <p>Price: {tea.price}</p>
       <p>Pounds sold: {tea.poundsSold} lb</p>
-      <p>Pounds Remaining in crate: {tea.poundsRemaining} lb</p>      
+      <p> Pounds Remaining in crate: {tea.poundsRemaining}</p>
       <button onClick={() => sell(tea)}>Sell</button>
       <button onClick={home}>Back to List</button>
     </div>
@@ -24,6 +26,8 @@ TeaDetails.propTypes = {
   price: PropTypes.string,
   poundsRemaining: PropTypes.number,
   poundsSold: PropTypes.number,
+  home: PropTypes.func,
+  sell: PropTypes.func
 };
 
 

@@ -24,7 +24,8 @@ function TeaList ({inventory, handleDetails}) {
 }
 
 TeaList.propTypes = {
-  inventory: PropTypes.array
+  inventory: PropTypes.array,
+  handleDetails: PropTypes.func
 };
 
 export default TeaList;

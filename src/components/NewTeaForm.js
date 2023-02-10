@@ -44,7 +44,8 @@ function NewTeaForm(props) {
 }
 
 NewTeaForm.propTypes = {
-  formSubmissionHandler: PropTypes.func
+  formSubmissionHandler: PropTypes.func,
+  home: PropTypes.func
 };
 
 export default NewTeaForm;

@@ -38,8 +38,12 @@ class TeaController extends React.Component {
 
   handleSell = (selectedTea) => {
     let updatedTea = selectedTea;
-
-    updatedTea.poundsRemaining -= 1;
+    if (updatedTea.poundsRemaining > 0){
+      updatedTea.poundsRemaining -= 1;
+      updatedTea.poundsSold += 1;
+    } else {
+      updatedTea.poundsRemaining = "Out of stock"
+    }
     let updatedInventory = this.state.inventory;
     updatedInventory[this.state.inventory.indexOf(selectedTea)] = updatedTea;
     this.setState({inventory: updatedInventory})

@@ -1,5 +1,6 @@
 import React from "react";
 import inventoryList from "./inventoryList";
+import NewTeaForm from "./NewTeaForm";
 import TeaList from "./TeaList";
 
 class TeaController extends React.Component {
@@ -7,15 +8,29 @@ class TeaController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inventory: inventoryList
+      inventory: inventoryList,
+      formVisible: false
     };
+  }
+
+  handleClick = () => {
+    this.setState({formVisible: true})
   }
 
 
   render() {
+    let currentView = null;
+
+    if(this.state.formVisible) {
+      currentView = <NewTeaForm />
+    } else {
+      currentView = <TeaList inventory={this.state.inventory} />
+    }
+
     return(
       <div>
-        <TeaList inventory={this.state.inventory} />
+        <button onClick={this.handleClick}>Add new tea</button>
+        {currentView}
       </div>
     )
   }

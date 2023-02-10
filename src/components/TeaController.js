@@ -1,6 +1,7 @@
 import React from "react";
 import inventoryList from "./inventoryList";
 import NewTeaForm from "./NewTeaForm";
+import TeaDetails from "./TeaDetails";
 import TeaList from "./TeaList";
 
 class TeaController extends React.Component {
@@ -8,8 +9,9 @@ class TeaController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inventory: [] ,
-      formVisible: false
+      inventory: inventoryList ,
+      formVisible: false,
+      details: null
     };
   }
 
@@ -18,20 +20,30 @@ class TeaController extends React.Component {
   }
 
   formSubmissionHandler = (newTea) => {
-    console.log("tea" + newTea)
     let newInventory = this.state.inventory.concat(newTea);
-    console.log("inventory " + newInventory)
     this.setState({inventory: newInventory, formVisible: false})
   }
+
+  handleDetails = (id) => {
+    
+    const selectedTea = this.state.inventory.filter(tea => tea.id === id)[0];
+    console.log (selectedTea)
+    this.setState({details: selectedTea})
+    console.log(this.state.details)
+  }
+
 
 
   render() {
     let currentView = null;
 
+    if(this.state.details != null) {
+      currentView = <TeaDetails tea = {this.state.details} />
+    }
     if(this.state.formVisible) {
       currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler}/>
     } else {
-      currentView = <TeaList inventory={this.state.inventory} />
+      currentView = <TeaList inventory={this.state.inventory} handleDetails = {this.handleDetails} />
     }
 
     return(

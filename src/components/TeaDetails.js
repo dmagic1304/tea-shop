@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function TeaDetails(){
+function TeaDetails({tea}){
 
   return (
     <div>
-      <h1>Tea Name</h1>      
+      <h1>{tea.name}</h1>      
     </div>
   );
 }

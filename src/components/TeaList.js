@@ -2,12 +2,12 @@ import React from "react";
 import Tea from "./Tea";
 import PropTypes from "prop-types";
 
-function TeaList ({inventory}) {
+function TeaList ({inventory, handleDetails}) {
   return(
     <div>
       {inventory.map((tea) => {
         return (
-          <div>
+          <div onClick={() => handleDetails(tea.id)}>
             <Tea 
               name = {tea.name}
               origin = {tea.origin}

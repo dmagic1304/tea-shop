@@ -39,8 +39,7 @@ class TeaController extends React.Component {
 
     if(this.state.details != null) {
       currentView = <TeaDetails tea = {this.state.details} />
-    }
-    if(this.state.formVisible) {
+    }else if(this.state.formVisible) {
       currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler}/>
     } else {
       currentView = <TeaList inventory={this.state.inventory} handleDetails = {this.handleDetails} />

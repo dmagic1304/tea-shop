@@ -1,9 +1,8 @@
 import React from "react";
 
-function TeaList () {
+function TeaList ({inventory}) {
   return(
     <div>
-      
       
     </div>
   )

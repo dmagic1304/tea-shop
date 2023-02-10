@@ -1,5 +1,6 @@
 import React from "react";
 import inventoryList from "./inventoryList";
+import TeaList from "./TeaList";
 
 class TeaController extends React.Component {
 
@@ -13,7 +14,9 @@ class TeaController extends React.Component {
 
   render() {
     return(
-      <p>main</p>
+      <div>
+        <TeaList inventory={this.state.inventory} />
+      </div>
     )
   }
 

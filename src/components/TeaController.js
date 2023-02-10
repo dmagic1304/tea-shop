@@ -8,7 +8,7 @@ class TeaController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inventory: inventoryList,
+      inventory: [] ,
       formVisible: false
     };
   }

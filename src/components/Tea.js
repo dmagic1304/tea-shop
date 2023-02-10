@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 function Tea({name, origin, price, roast}) {
   return (
@@ -10,5 +12,12 @@ function Tea({name, origin, price, roast}) {
     </div>
   )
 }
+
+Tea.propTypes = {
+  name: PropTypes.string,
+  origin: PropTypes.string,
+  roast: PropTypes.string,
+  price: PropTypes.string
+};
 
 export default Tea;

@@ -11,7 +11,7 @@ function TeaDetails({tea, home, sell}){
       <p>Price: {tea.price}</p>
       <p>Pounds sold: {tea.poundsSold} lb</p>
       <p>Pounds Remaining in crate: {tea.poundsRemaining} lb</p>      
-      <button onClick={sell}>Sell</button>
+      <button onClick={() => sell(tea)}>Sell</button>
       <button onClick={home}>Back to List</button>
     </div>
   );

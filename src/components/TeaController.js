@@ -33,9 +33,16 @@ class TeaController extends React.Component {
   handleDetails = (id) => {
     
     const selectedTea = this.state.inventory.filter(tea => tea.id === id)[0];
-    console.log (selectedTea)
     this.setState({details: selectedTea})
-    console.log(this.state.details)
+  }
+
+  handleSell = (selectedTea) => {
+    let updatedTea = selectedTea;
+
+    updatedTea.poundsRemaining -= 1;
+    let updatedInventory = this.state.inventory;
+    updatedInventory[this.state.inventory.indexOf(selectedTea)] = updatedTea;
+    this.setState({inventory: updatedInventory})
   }
 
 
@@ -44,7 +51,7 @@ class TeaController extends React.Component {
     let currentView = null;
 
     if(this.state.details != null) {
-      currentView = <TeaDetails tea = {this.state.details} home = {this.handleHomeClick}/>
+      currentView = <TeaDetails tea = {this.state.details} home = {this.handleHomeClick} sell = {this.handleSell}/>
     }else if(this.state.formVisible) {
       currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler} home = {this.handleHomeClick}/>
     } else {

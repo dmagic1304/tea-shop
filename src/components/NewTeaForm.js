@@ -38,6 +38,7 @@ function NewTeaForm(props) {
           placeholder='Price' />
         <button type='submit'>Add new crate of tea</button>
       </form>
+      <button onClick={props.home}>Back to List</button>
     </div>
   );
 }

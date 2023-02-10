@@ -14,6 +14,12 @@ class TeaController extends React.Component {
       details: null
     };
   }
+  handleHomeClick = () => {
+    this.setState({
+      formVisible: false,
+      details: null
+    })
+  }
 
   handleClick = () => {
     this.setState({formVisible: true})
@@ -38,11 +44,11 @@ class TeaController extends React.Component {
     let currentView = null;
 
     if(this.state.details != null) {
-      currentView = <TeaDetails tea = {this.state.details} />
+      currentView = <TeaDetails tea = {this.state.details} home = {this.handleHomeClick}/>
     }else if(this.state.formVisible) {
-      currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler}/>
+      currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler} home = {this.handleHomeClick}/>
     } else {
-      currentView = <TeaList inventory={this.state.inventory} handleDetails = {this.handleDetails} />
+      currentView = <TeaList inventory={this.state.inventory} handleDetails = {this.handleDetails} home = {this.handleHomeClick}/>
     }
 
     return(

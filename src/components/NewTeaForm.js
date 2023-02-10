@@ -13,7 +13,7 @@ function NewTeaForm(props) {
       price: e.target.price.value,
       poundsRemaining: 130,
       poundsSold: 0,
-      id: v4()
+      key: v4()
     })
    }
 

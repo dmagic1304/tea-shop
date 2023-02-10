@@ -1,13 +1,15 @@
 import React from "react";
 import Tea from "./Tea";
 import PropTypes from "prop-types";
+import { v4 } from 'uuid'; 
+
 
 function TeaList ({inventory, handleDetails}) {
   return(
-    <div>
+    <div >
       {inventory.map((tea) => {
         return (
-          <div onClick={() => handleDetails(tea.id)}>
+          <div key={v4()} onClick={() => handleDetails(tea.id)}>
             <Tea 
               name = {tea.name}
               origin = {tea.origin}
@@ -15,7 +17,7 @@ function TeaList ({inventory, handleDetails}) {
               price = {tea.price}
               poundsRemaining = {tea.poundsRemaining}
               poundsSold = {tea.poundsSold} 
-              key = {tea.id} />
+              key = {tea.key} />
           </div>
         )
       })}

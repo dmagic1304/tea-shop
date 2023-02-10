@@ -15,10 +15,7 @@ function Tea({name, origin, roast}) {
 Tea.propTypes = {
   name: PropTypes.string,
   origin: PropTypes.string,
-  roast: PropTypes.string,
-  price: PropTypes.string,
-  poundsRemaining: PropTypes.number,
-  poundsSold: PropTypes.number,
+  roast: PropTypes.string
 };
 
 export default Tea;

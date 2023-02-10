@@ -6,7 +6,7 @@ import { v4 } from 'uuid';
 
 function TeaList ({inventory, handleDetails}) {
   return(
-    <div >
+    <div class="grid grid-flow-col grid-cols-3 grid-rows-3 gap-4">
       {inventory.map((tea) => {
         return (
           <div key={v4()} onClick={() => handleDetails(tea.id)}>

@@ -4,7 +4,7 @@ import TeaController from "./TeaController";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" class="container" >
       <Header />
       <TeaController />
     </div>

@@ -4,11 +4,22 @@ import { v4 } from 'uuid';
 
 function NewTeaForm(props) {
 
-   
+   function handleNewTeaSubmisssion(e) {
+    e.preventDefault();
+    props.formSubmissionHandler({
+      name: e.target.name.value,
+      origin: e.target.origin.value,
+      roast: e.target.roast.value,
+      price: e.target.price.value,
+      poundsRemaining: 130,
+      poundsSold: 0,
+      id: v4()
+    })
+   }
 
   return (
     <div>
-      <form onSubmit={props.formSubmissionHandler}>
+      <form onSubmit={handleNewTeaSubmisssion}>
         <input
           type='text'
           name='name'
@@ -32,6 +43,7 @@ function NewTeaForm(props) {
 }
 
 NewTeaForm.propTypes = {
+  formSubmissionHandler: PropTypes.func
 };
 
 export default NewTeaForm;

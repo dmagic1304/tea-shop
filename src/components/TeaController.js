@@ -17,12 +17,19 @@ class TeaController extends React.Component {
     this.setState({formVisible: true})
   }
 
+  formSubmissionHandler = (newTea) => {
+    console.log("tea" + newTea)
+    let newInventory = this.state.inventory.concat(newTea);
+    console.log("inventory " + newInventory)
+    this.setState({inventory: newInventory, formVisible: false})
+  }
+
 
   render() {
     let currentView = null;
 
     if(this.state.formVisible) {
-      currentView = <NewTeaForm />
+      currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler}/>
     } else {
       currentView = <TeaList inventory={this.state.inventory} />
     }

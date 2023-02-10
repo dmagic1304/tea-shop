@@ -14,7 +14,8 @@ function TeaList ({inventory}) {
               roast = {tea.roast}
               price = {tea.price}
               poundsRemaining = {tea.poundsRemaining}
-              poundsSold = {tea.poundsSold} />
+              poundsSold = {tea.poundsSold} 
+              key = {tea.id} />
           </div>
         )
       })}

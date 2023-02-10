@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function TeaDetails({tea, home}){
+function TeaDetails({tea, home, sell}){
 
   return (
     <div>
@@ -11,6 +11,7 @@ function TeaDetails({tea, home}){
       <p>Price: {tea.price}</p>
       <p>Pounds sold: {tea.poundsSold} lb</p>
       <p>Pounds Remaining in crate: {tea.poundsRemaining} lb</p>      
+      <button onClick={sell}>Sell</button>
       <button onClick={home}>Back to List</button>
     </div>
   );

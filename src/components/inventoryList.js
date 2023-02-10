@@ -6,6 +6,8 @@ let inventoryList = [
     origin: "Asia",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$13",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  },
  {  
@@ -13,6 +15,8 @@ let inventoryList = [
     origin: "Alaska",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$4",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  },
  {  
@@ -20,6 +24,8 @@ let inventoryList = [
     origin: "New Zeland",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$8",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  },
  {  
@@ -27,6 +33,8 @@ let inventoryList = [
     origin: "Spain",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$6",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  },
  {  
@@ -34,6 +42,8 @@ let inventoryList = [
     origin: "Chile",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$14",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  },
  {  
@@ -41,6 +51,8 @@ let inventoryList = [
     origin: "Argentina",
     roast: "Sed ut perspiciatis unde omnis",
     price: "$8",
+    poundsRemaining: 130,
+    poundsSold: 0,
     id: v4()
  }
 ];

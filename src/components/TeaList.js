@@ -12,7 +12,9 @@ function TeaList ({inventory}) {
               name = {tea.name}
               origin = {tea.origin}
               roast = {tea.roast}
-              price = {tea.price} />
+              price = {tea.price}
+              poundsRemaining = {tea.poundsRemaining}
+              poundsSold = {tea.poundsSold} />
           </div>
         )
       })}

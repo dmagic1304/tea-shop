@@ -6,7 +6,7 @@ let inventoryList = [
     origin: "Asia",
     flavor: "Sweet",
     price: "$7",
-    poundsRemaining: 130,
+    poundsRemaining: 10,
     poundsSold: 0,
     id: v4()
  },

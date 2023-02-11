@@ -63,7 +63,7 @@ class TeaController extends React.Component {
     }
 
     return(
-      <div class="justify-center">
+      <div className="justify-center">
         {currentView}
       </div>
     )

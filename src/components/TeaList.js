@@ -15,7 +15,7 @@ function TeaList ({inventory, handleDetails, handleClick}) {
               <Tea 
                 name = {tea.name}
                 origin = {tea.origin}
-                roast = {tea.roast}
+                flavor = {tea.flavor}
                 price = {tea.price}
                 poundsRemaining = {tea.poundsRemaining}
                 poundsSold = {tea.poundsSold} 

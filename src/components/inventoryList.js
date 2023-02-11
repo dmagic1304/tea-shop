@@ -4,16 +4,16 @@ let inventoryList = [
  {  
     name: "Camomile",
     origin: "Asia",
-    roast: "Sed ut perspiciatis unde omnis",
-    price: "$13",
-    poundsRemaining: 3,
+    flavor: "Sweet",
+    price: "$7",
+    poundsRemaining: 130,
     poundsSold: 0,
     id: v4()
  },
  {  
     name: "Green",
     origin: "Alaska",
-    roast: "Sed ut perspiciatis unde omnis",
+    flavor: "Herbal",
     price: "$4",
     poundsRemaining: 130,
     poundsSold: 0,
@@ -22,7 +22,7 @@ let inventoryList = [
  {  
     name: "Black",
     origin: "New Zeland",
-    roast: "Sed ut perspiciatis unde omnis",
+    flavor: "Refreshing",
     price: "$8",
     poundsRemaining: 130,
     poundsSold: 0,
@@ -31,7 +31,7 @@ let inventoryList = [
  {  
     name: "Fruit",
     origin: "Spain",
-    roast: "Sed ut perspiciatis unde omnis",
+    flavor: "Sweet",
     price: "$6",
     poundsRemaining: 130,
     poundsSold: 0,
@@ -40,16 +40,16 @@ let inventoryList = [
  {  
     name: "Herbal",
     origin: "Chile",
-    roast: "Sed ut perspiciatis unde omnis",
-    price: "$14",
+    flavor: "Refreshing",
+    price: "$5",
     poundsRemaining: 130,
     poundsSold: 0,
     id: v4()
  },
  {  
-    name: "Sweet",
+    name: "Elderflower",
     origin: "Argentina",
-    roast: "Sed ut perspiciatis unde omnis",
+    flavor: "Sweet",
     price: "$8",
     poundsRemaining: 130,
     poundsSold: 0,

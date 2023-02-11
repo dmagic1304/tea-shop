@@ -9,7 +9,7 @@ function NewTeaForm(props) {
     props.formSubmissionHandler({
       name: e.target.name.value,
       origin: e.target.origin.value,
-      roast: e.target.roast.value,
+      flavor: e.target.flavor.value,
       price: e.target.price.value,
       poundsRemaining: 130,
       poundsSold: 0,
@@ -35,8 +35,8 @@ function NewTeaForm(props) {
           <input
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"
             type='text'
-            name='roast'
-            placeholder='Roast' />
+            name='flavor'
+            placeholder='Flavor' />
           <input
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"
             type='number'

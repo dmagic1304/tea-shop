@@ -11,7 +11,7 @@ function TeaDetails({tea, home, sell}){
       <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{tea.name}</h1>
         <p class="font-normal text-gray-700 dark:text-gray-400">Origin: {tea.origin}</p>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Roast: {tea.roast}</p>
+        <p class="font-normal text-gray-700 dark:text-gray-400">Flavor: {tea.flavor}</p>
         <p class="font-normal text-gray-700 dark:text-gray-400">Price: {tea.price}</p>
         <p class="font-normal text-gray-700 dark:text-gray-400">Pounds sold: {tea.poundsSold} lb</p>
         <p class="font-normal text-gray-700 dark:text-gray-400"> Pounds Remaining in crate: {tea.poundsRemaining}</p>
@@ -24,7 +24,7 @@ function TeaDetails({tea, home, sell}){
 TeaDetails.propTypes = {
   name: PropTypes.string,
   origin: PropTypes.string,
-  roast: PropTypes.string,
+  flavor: PropTypes.string,
   price: PropTypes.string,
   poundsRemaining: PropTypes.number,
   poundsSold: PropTypes.number,

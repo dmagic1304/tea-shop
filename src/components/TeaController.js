@@ -58,8 +58,8 @@ class TeaController extends React.Component {
   handleUpdate = (selectedTea) => {
     let updatedTea = selectedTea;
     let updatedInventory = this.state.inventory;
-    updatedInventory[this.state.inventory.indexOf(this.details)] = updatedTea;
-    this.setState({ inventory: updatedInventory, editing: false })
+    updatedInventory[this.state.inventory.indexOf(this.state.details)] = updatedTea;
+    this.setState({ inventory: updatedInventory, editing: false, details: null })
   }
 
 

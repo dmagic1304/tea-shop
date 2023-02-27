@@ -3,15 +3,17 @@ import inventoryList from "./inventoryList";
 import NewTeaForm from "./NewTeaForm";
 import TeaDetails from "./TeaDetails";
 import TeaList from "./TeaList";
+import UpdateTeaForm from "./UpdateTeaForm";
 
 class TeaController extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      inventory: inventoryList ,
+      inventory: inventoryList,
       formVisible: false,
-      details: null
+      details: null,
+      editing: false
     };
   }
   handleHomeClick = () => {
@@ -22,23 +24,23 @@ class TeaController extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({formVisible: true})
+    this.setState({ formVisible: true })
   }
 
   formSubmissionHandler = (newTea) => {
     let newInventory = this.state.inventory.concat(newTea);
-    this.setState({inventory: newInventory, formVisible: false})
+    this.setState({ inventory: newInventory, formVisible: false })
   }
 
   handleDetails = (id) => {
-    
+
     const selectedTea = this.state.inventory.filter(tea => tea.id === id)[0];
-    this.setState({details: selectedTea})
+    this.setState({ details: selectedTea })
   }
 
   handleSell = (selectedTea) => {
     let updatedTea = selectedTea;
-    if (updatedTea.poundsRemaining > 0){
+    if (updatedTea.poundsRemaining > 0) {
       updatedTea.poundsRemaining -= 1;
       updatedTea.poundsSold += 1;
     } else {
@@ -46,7 +48,18 @@ class TeaController extends React.Component {
     }
     let updatedInventory = this.state.inventory;
     updatedInventory[this.state.inventory.indexOf(selectedTea)] = updatedTea;
-    this.setState({inventory: updatedInventory})
+    this.setState({ inventory: updatedInventory })
+  }
+
+  handleUpdateForm = () => {
+    this.setState({ editing: true })
+  }
+
+  handleUpdate = (selectedTea) => {
+    let updatedTea = selectedTea;
+    let updatedInventory = this.state.inventory;
+    updatedInventory[this.state.inventory.indexOf(this.details)] = updatedTea;
+    this.setState({ inventory: updatedInventory, editing: false })
   }
 
 
@@ -54,15 +67,17 @@ class TeaController extends React.Component {
   render() {
     let currentView = null;
 
-    if(this.state.details != null) {
-      currentView = <TeaDetails tea = {this.state.details} home = {this.handleHomeClick} sell = {this.handleSell}/>
-    }else if(this.state.formVisible) {
-      currentView = <NewTeaForm formSubmissionHandler = {this.formSubmissionHandler} home = {this.handleHomeClick}/>
+    if (this.state.editing) {
+      currentView = <UpdateTeaForm update={this.handleUpdate} />
+    } else if (this.state.details != null) {
+      currentView = <TeaDetails tea={this.state.details} home={this.handleHomeClick} sell={this.handleSell} update={this.handleUpdateForm} />
+    } else if (this.state.formVisible) {
+      currentView = <NewTeaForm formSubmissionHandler={this.formSubmissionHandler} home={this.handleHomeClick} />
     } else {
-      currentView = <TeaList handleClick = {this.handleClick} inventory={this.state.inventory} handleDetails = {this.handleDetails} home = {this.handleHomeClick}/>
+      currentView = <TeaList handleClick={this.handleClick} inventory={this.state.inventory} handleDetails={this.handleDetails} home={this.handleHomeClick} />
     }
 
-    return(
+    return (
       <div className="justify-center">
         {currentView}
       </div>

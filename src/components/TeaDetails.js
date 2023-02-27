@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function TeaDetails({tea, home, sell}){
+function TeaDetails({ tea, home, sell, update }) {
 
-  
+
 
   return (
     <React.Fragment>
@@ -17,6 +17,7 @@ function TeaDetails({tea, home, sell}){
         <p className="font-normal text-gray-700 dark:text-gray-400"> Pounds Remaining in crate: {tea.poundsRemaining}</p>
       </div>
       <button onClick={() => sell(tea)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sell</button>
+      <button onClick={() => update(tea)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
     </React.Fragment>
   );
 }

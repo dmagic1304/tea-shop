@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 
 function NewTeaForm(props) {
 
-   function handleNewTeaSubmisssion(e) {
+  function handleNewTeaSubmisssion(e) {
     e.preventDefault();
     props.formSubmissionHandler({
       name: e.target.name.value,
@@ -13,9 +13,9 @@ function NewTeaForm(props) {
       price: e.target.price.value,
       poundsRemaining: 130,
       poundsSold: 0,
-      key: v4()
+      id: v4()
     })
-   }
+  }
 
   return (
     <React.Fragment>
@@ -43,7 +43,7 @@ function NewTeaForm(props) {
             name='price'
             placeholder='Price' />
           <button type='submit' className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add new crate of tea</button>
-        </form>      
+        </form>
       </div>
     </React.Fragment>
   );
